@@ -1,0 +1,16 @@
+{
+	"name": "uni-mall",
+	"version": "1.0.0",
+	"description": "拾惠街市",
+	"main": "main.js",
+	"dependencies": {
+		"gcoord": "^0.2.3",
+		"lodash": "^4.17.15"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "LanceYi",
+	"license": "ISC"
+}

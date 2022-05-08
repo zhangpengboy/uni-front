@@ -1,0 +1,225 @@
+/* 购物车列表 */
+.cart-list{
+  width: 100%;
+  padding-top: 28rpx;
+	padding-bottom: 120rpx;
+  /* #ifdef APP-PLUS */
+  margin-top: calc(100rpx + var(--status-bar-height));
+  /* #endif */
+  .list{
+    display: flex;
+		padding-top: 15rpx;
+		padding-bottom: 15rpx;
+		align-items: center;
+    .check{
+      display: flex;
+      align-items: center;
+			margin-right: 10upx;
+      text{
+        font-size: 36rpx;
+        color: #333333;
+      }
+      .icon-checked{
+        color: $uni-color-main;
+      }
+    }
+    .goods{
+      display: flex;
+      align-items: center;
+      .thumb{
+        display: flex;
+        justify-content: center;
+        width: 180rpx;
+        height: 180rpx;
+        image{
+          width: 180rpx;
+          height: 180rpx;
+          border-radius: 10rpx;
+        }
+      }
+      .item{
+        padding: 10rpx;
+				flex: 1;
+        height: 100%;
+        .title{
+          display: flex;
+          align-items: center;
+          width: 100%;
+          overflow: hidden;
+          text{
+						display: -webkit-box;
+						-webkit-box-orient: vertical;
+						-webkit-line-clamp: 2;
+						text-align: justify;
+            font-size: 26rpx;
+            color: #212121;
+          }
+        }
+        .attribute{
+          display: flex;
+          align-items: center;
+          margin-top: 10rpx;
+          .attr{
+            display: flex;
+            align-items: center;
+            padding: 4rpx 20rpx;
+            background-color: #f6f6f6;
+            border-radius: 10rpx;
+            text{
+              font-size: 22rpx;
+              color: #333333;
+            }
+            .more{
+              display: flex;
+              width: 10rpx;
+              height: 10rpx;
+              border-left: 2rpx solid #333333;
+              border-bottom: 2rpx solid #333333;
+              transform: rotate(-45deg);
+              margin-left: 10rpx;
+            }
+          }
+        }
+        .price-num{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+					padding: 16rpx 0;
+          .num{
+            display: flex;
+            height: 40rpx;
+            .add{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 40rpx;
+              height: 40rpx;
+              background-color: #FFFFFF;
+              text{
+                color: #212121;
+                font-size: 24rpx;
+              }
+            }
+            .number{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 80rpx;
+              height: 40rpx;
+              background-color: #f6f6f6;
+              border-radius: 8rpx;
+              text{
+                font-size: 24rpx;
+                color: #212121;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 结算 */
+.close-account{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100rpx;
+  background-color: #FFFFFF;
+  border-top: 2rpx solid #f6f6f6;
+  .check-total{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    .check{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40%;
+      height: 100%;
+      text{
+        font-size: 36rpx;
+        color: #333333;
+      }
+      .icon-checked{
+        color: $uni-color-main;
+      }
+      .all{
+        font-size: 24rpx;
+        margin-left: 10rpx;
+      }
+    }
+    .total{
+      display: flex;
+      align-items: center;
+      width: 60%;
+      height: 100%;
+      text{
+        font-size: 24rpx;
+        color: #333333;
+      }
+      .price{
+        font-weight: bold;
+        color: $uni-color-main;
+      }
+    }
+  }
+  .account{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 46%;
+    padding-right: 4%;
+    .btn-calculate{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 160rpx;
+      height: 55rpx;
+      background-color: $uni-color-main;
+      border-radius: 60rpx;
+      text{
+        color: #FFFFFF;
+        font-size: 24rpx;
+      }
+    }
+    .btn-del{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .attention{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 140rpx;
+        height: 55rpx;
+        border: 2rpx solid #EEEEEE;
+        border-radius: 60rpx;
+        color: #333333;
+        font-size: 24rpx;
+        margin-right: 20rpx;
+      }
+      .del{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 120rpx;
+        height: 50rpx;
+        border: 1px solid $uni-color-main;
+        border-radius: 60rpx;
+        color: $uni-color-main;
+        font-size: 24rpx;
+				margin-right: 20upx;
+      }
+    }
+  }
+}
+
+.not-login {
+	padding-top: 180upx;
+}

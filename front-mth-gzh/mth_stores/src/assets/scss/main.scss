@@ -1,0 +1,85 @@
+@import "js-variable";
+
+// =========================全局布局==============================
+// 通用容器
+.main-wrap {
+  background: $whiteColor;
+  margin-left: 12px;
+  margin-right: 12px;
+  border-radius: 8px;
+  overflow: hidden;
+
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+  &-box {
+    padding: 14px;
+  }
+  &-cont {
+    padding: 14px;
+  }
+}
+
+// 通用按钮
+.cbtn {
+  font-size: 14px;
+  line-height: 16px;
+  padding: 4px 12px;
+  margin-left: 12px;
+  border-radius: 25px;
+  color: $mutedColor;
+  border: 1px solid $mutedColor;
+
+  &.main {
+    color: $mainColor;
+    border: 1px solid $mainColor;
+  }
+}
+
+.text-price::before {
+  content: "¥";
+  font-size: 10px;
+  margin-right: 2px;
+  margin-left: 2px;
+  font-weight: 300;
+}
+.text-main {
+  color: #EB6132;
+}
+.text-xs {
+  font-size: 10px;
+  font-weight: 300;
+}
+// 市场价格
+.text-marketPrice {
+  font-size: 12px;
+  color: #999;
+  font-weight: 300;
+  margin-left: 8px;
+  text-decoration:line-through; 
+}
+// .text-marketPrice::before {
+//   content: "¥";
+//   margin-right: 2px;
+//   text-decoration:line-through; 
+// }
+
+// 常用按钮位置
+.but {
+  width: 262px;
+  height: 38px;
+  font-size: 14px;
+  line-height: 38px;
+  margin: 0 auto;
+}
+// 固定底部
+.footer {
+  position: fixed;
+  bottom: 25px;
+  left: 15%;
+}
+// 解决ios不能输入问题
+textarea {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+}

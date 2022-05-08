@@ -1,0 +1,1027 @@
+@import "js-variable";
+
+// =========================全局布局==============================
+// 通用容器
+.main-wrap {
+  background: $whiteColor;
+  margin-left: 16px;
+  margin-right: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+
+  &-cont {
+    padding: 14px;
+  }
+}
+
+// 通用按钮
+.cbtn {
+  font-size: 14px;
+  line-height: 16px;
+  padding: 4px 12px;
+  margin-left: 12px;
+  border-radius: 25px;
+  color: $mutedColor;
+  border: 1px solid $mutedColor;
+
+  &.main {
+    color: $mainColor;
+    border: 1px solid $mainColor;
+  }
+}
+
+// 订单、资产详情 自定义顶部样式
+.order,
+.center-money {
+  .van-nav-bar {
+    background-color: $mainColor;
+    color: $whiteColor;
+    .van-icon,
+    .van-nav-bar__title {
+      color: $whiteColor;
+    }
+    .van-nav-bar__text {
+      color: #a3cafe;
+    }
+    &.van-hairline--bottom::after {
+      border-block-width: 0px;
+    }
+  }
+}
+
+// =========================首页 BTC ETH==============================
+.home {
+  background-color: $whiteColor;
+  &-row {
+    display: flex;
+    padding: 15px;
+  }
+  &-img {
+    width: 100%;
+    max-width: 134px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  &-info {
+    flex: 1;
+    padding-left: 10px;
+
+    .title {
+      font-size: 16px;
+      margin-bottom: 12px;
+      padding-top: 10px;
+    }
+    .desc,
+    .output {
+      white-space: nowrap;
+      font-size: 13px;
+      color: $lightColor;
+      margin-bottom: 12px;
+    }
+    .cny {
+      text-align: right;
+      color: $mainColor;
+      font-size: 22px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .number {
+      @include progress;
+    }
+  }
+}
+
+// =========================我的==============================
+.center {
+  // 个人中心
+  &-info {
+    height: 290px;
+
+    .headimg {
+      width: 75px;
+      height: 75px;
+    }
+
+    .headinfo {
+      height: 80px;
+      display: flex;
+      flex-direction: column;
+      padding-left: 12px;
+
+      .nickname {
+        font-size: 18px;
+        padding-top: 12px;
+        // padding-bottom: 12px;
+      }
+
+      .mobile {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        font-size: 14px;
+      }
+
+      .headlogin {
+        color: #333;
+        padding-top: 30px;
+      }
+    }
+
+    .settings {
+      position: absolute;
+      right: 20px;
+      top: 40px;
+    }
+
+    .van-grid-item__content--center {
+      border-radius: 8px;
+    }
+    .van-grid-item__content--surround::after {
+      border-width: 0px;
+    }
+    .van-grid-item__text {
+      font-size: 14px;
+    }
+
+    .balance {
+      width: 332px;
+      margin: 0 auto;
+      border-radius: 8px;
+      background-color: #0a274d;
+      color: $whiteColor;
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      padding: 14px 14px 30px 14px;
+      margin-bottom: 10px;
+
+      .num {
+        font-size: 16px;
+        color: #fb8e44;
+        margin-right: 10px;
+        line-height: 1;
+        align-self: flex-end;
+      }
+    }
+  }
+  &-assets {
+    background-color: $whiteColor;
+    min-height: calc(100vh - 340px);
+
+    .money-top {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .money-bottom {
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+
+    .money {
+      position: relative;
+      background: linear-gradient(135deg, #509cff 0%, #1e74e4 100%);
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      margin-left: 16px;
+      margin-right: 16px;
+      top: -25px;
+      display: flex;
+
+      &::after {
+        content: " ";
+        display: block;
+        width: 1px;
+        height: 36px;
+        background-color: $whiteColor;
+        opacity: 0.3;
+        position: absolute;
+        left: 49%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    .item {
+      width: 50%;
+      flex: 1;
+      h3 {
+        font-size: 13px;
+        color: #f8f8f8;
+        margin-bottom: 16px;
+      }
+      h1 {
+        font-size: 16px;
+        color: $whiteColor;
+      }
+    }
+  }
+
+  // 资产、资产详情
+  &-money {
+    .money-info {
+      position: relative;
+      background-color: $mainColor;
+      padding: 16px;
+      color: $whiteColor;
+
+      .tips {
+        position: absolute;
+        top: 30%;
+        right: 0;
+        background: #3e90f9;
+        box-shadow: 0px 1px 3px #1466d1;
+        border-radius: 16px 0px 0px 16px;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        padding: 5px 8px;
+      }
+    }
+    .money-assets {
+      height: 155px;
+      color: $whiteColor;
+      &.cny {
+        background: url("~@/assets/images/center/bg-cny@2x.png") no-repeat
+          center/100%;
+      }
+      &.btc {
+        background: url("~@/assets/images/center/bg-btc@2x.png") no-repeat
+          center/100%;
+      }
+      &.eth {
+        background: url("~@/assets/images/center/bg-eth@2x.png") no-repeat
+          center/100%;
+      }
+      &.fil {
+        background: url("~@/assets/images/center/bg-fil@2x.png") no-repeat
+          center/100%;
+      }
+      &.xch {
+        background: url("~@/assets/images/center/bg-xch@2x.png") no-repeat
+          center/100%;
+      }
+    }
+  }
+  // 交易记录
+  &,
+  .money-list {
+    &-title {
+      font-size: 18px;
+      color: #cfcfcf;
+      line-height: 46px;
+      span.active {
+        position: relative;
+        color: $textColor;
+        &::after {
+          content: " ";
+          display: block;
+          width: 30px;
+          height: 3px;
+          background: $mainColor;
+          position: absolute;
+          bottom: -5px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+
+  // 转出 转入bit样式
+  &.bit {
+    padding-top: 56px;
+    .bit-box {
+      min-height: calc(100vh - 102px);
+      background-color: $whiteColor;
+      position: relative;
+      .image {
+        width: 64px;
+        height: 64px;
+        position: absolute;
+        left: 50%;
+        top: -32px;
+        transform: translateX(-50%);
+      }
+
+      padding-top: 35px;
+    }
+
+    .bit-btn {
+      height: 41px;
+      line-height: 41px;
+      background: linear-gradient(180deg, #1e74e4 0%, #3c90fc 100%);
+      margin-left: 16px;
+      margin-right: 16px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      text-align: center;
+      color: $whiteColor;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+  }
+
+  // 底部按钮
+  .footer-btn {
+    width: 100%;
+    position: fixed;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    display: flex;
+    padding: 0 15px;
+  }
+}
+// 收付款设置
+.cards {
+  border-color: $whiteColor;
+
+  .color-bit1 {
+    background-color: #4591f3;
+    color: $whiteColor;
+  } // CNY
+  .color-bit2 {
+    background-color: #f3ca45;
+    color: $whiteColor;
+  } // BTC
+  .color-bit3 {
+    background-color: #f37a45;
+    color: $whiteColor;
+  } // ETH
+  &-item {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+// 充值 提现
+.recharge,
+.withdraw {
+  min-height: calc(100vh - 48px);
+  background-color: $whiteColor;
+
+  &-order {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .info {
+      background: #e3eaf6;
+      border-top-right-radius: 8px;
+      border-top-left-radius: 8px;
+      padding: 20px 15px;
+      display: flex;
+      .item {
+        width: 50%;
+        flex: 1;
+      }
+    }
+  }
+  // 充值状态
+  &-status {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    padding: 15px 25px;
+  }
+
+  // 提现银行卡
+  &-way {
+    padding-top: 15px;
+    .no-bank {
+      border: 1px solid #eeeeee;
+      margin-left: 15px;
+      margin-right: 15px;
+      text-align: center;
+      padding: 20px 15px;
+      border-radius: 4px;
+    }
+  }
+}
+
+// 钱包
+.wallet {
+  &-items {
+    margin: 0;
+    min-height: calc(100vh - 150px);
+  }
+}
+
+// =========================商品详情==============================
+.goods {
+  // 存储挖矿导航栏
+  .storage {
+    .van-nav-bar {
+      background: linear-gradient(270deg, #3863F1 0%, #57ABFF 100%);
+      color: $whiteColor;
+      .van-icon,
+      .van-nav-bar__title {
+        color: $whiteColor;
+      }
+      .van-nav-bar__text {
+        color: #a3cafe;
+      }
+      &.van-hairline--bottom::after {
+        border-block-width: 0px;
+      }
+    }
+  }
+  // 商品列表
+  &-list {
+    &-title {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+
+    &-nav {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 99;
+    }
+
+    &-sort {
+      position: fixed;
+      top: 54px;
+      left: 0;
+      z-index: 99;
+      width: 100%;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: -1px;
+      font-weight: 300;
+      padding-top: 5px;
+      padding-bottom: 5px;
+
+      .van-dropdown-menu__bar {
+        box-shadow: none;
+      }
+
+      .active {
+        color: red;
+      }
+    }
+
+    &-cards {
+      margin-top: 15px;
+
+      .card-item {
+        background-color: $whiteColor;
+      }
+    }
+  }
+
+  &-base {
+    &-top {
+      position: relative;
+      display: flex;
+      padding: 16px;
+      .image {
+        width: 100%;
+        max-width: 134px;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+      .info {
+        flex: 1;
+        font-size: 14px;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      .number {
+        @include progress;
+      }
+    }
+    &-foot {
+      background-color: $whiteColor;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      z-index: 0;
+      margin-top: -50px;
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-top: 50px;
+      padding-bottom: 15px;
+
+      .title {
+        font-size: 16px;
+        margin-bottom: 16px;
+      }
+    }
+  }
+  &-wrap {
+    background-color: $whiteColor;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+
+    &-bar {
+      display: flex;
+      align-content: center;
+      padding-bottom: 15px;
+      .icon {
+        width: 4px;
+        height: 22px;
+        background-color: $mainColor;
+        margin-right: 8px;
+      }
+      .name {
+        font-size: 15px;
+      }
+    }
+  }
+  // 产出规则
+  &-rules {
+    padding-bottom: 20px;
+    .progress {
+      width: 100%;
+      height: 4px;
+      background-color: #e3eaf6;
+      display: flex;
+      margin-top: 40px;
+      .one {
+        position: relative;
+        z-index: 10;
+        &::before {
+          content: " ";
+          display: block;
+          width: 8px;
+          height: 16px;
+          background: url("~@/assets/images/product/icon-left@2x.png") no-repeat
+            center/100%;
+          position: absolute;
+          top: -16px;
+          left: 0;
+        }
+      }
+      .two {
+        position: relative;
+        background-color: $mainColor;
+        &::before,
+        &::after {
+          content: " ";
+          display: block;
+          width: 8px;
+          height: 16px;
+          position: absolute;
+        }
+        &::before {
+          background: url("~@/assets/images/product/icon-left@2x.png") no-repeat
+            center/100%;
+          top: -16px;
+          left: 0;
+        }
+        &::after {
+          background: url("~@/assets/images/product/icon-right@2x.png")
+            no-repeat center/100%;
+          top: -16px;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  // 底部tabs
+  &-tabs {
+    background-color: $whiteColor;
+    padding-bottom: 50px;
+
+    &-spec,
+    &-detail {
+      padding: 24px 16px;
+      font-size: 12px;
+      p{
+        font-size: 12px;
+        color: $mutedColor;
+        line-height: 1.8;
+      }
+    }
+  }
+
+  // 底部按钮
+  &-buybtn {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &-popup {
+    padding-top: 20px;
+    padding-bottom: 60px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    &-pack {
+      height: 80px;
+      overflow-y: hidden;
+      overflow-x: auto;
+      .pack-boxs {
+        display: flex;
+      }
+      .pack-item {
+        flex: 1;
+        width: 145px;
+        height: 64px;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        background-color: $mainBgColor;
+        color: $lightColor;
+        border-radius: 4px;
+        margin-right: 10px;
+        &.on {
+          background: linear-gradient(180deg, #1e74e4 0%, #3c90fc 100%);
+          color: $whiteColor;
+        }
+      }
+      .van-badge--fixed {
+        right: 0px;
+        top: -15px;
+        font-size: 10px;
+        transform: scale(.8);
+      }
+    }
+  }
+}
+
+// =========================订单相关==============================
+.order {
+  // 订单详情顶部背景
+  &-topbg {
+    height: 122px;
+    background: linear-gradient(180deg, #1e74e4 0%, #7ab4ff 50%, #f8f8f8 100%);
+  }
+  &-status {
+    margin-top: -100px;
+
+    .img {
+      width: 52px;
+      height: 52px;
+    }
+    .title {
+      margin-left: 24px;
+    }
+
+    .sn {
+      background-color: $mainBgColor;
+      border-radius: 25px;
+      height: 32px;
+      line-height: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-content: center;
+    }
+    .copy {
+      border-radius: 50px;
+      color: $whiteColor;
+      background-color: $mainColor;
+      font-size: 13px;
+      line-height: 20px;
+      padding: 7px 15px;
+    }
+  }
+
+  &-top {
+    height: 75px;
+    background: linear-gradient(360deg, #f1722c 0%, #eb6132 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $whiteColor;
+    margin-bottom: 5px;
+
+    &-content {
+      padding: 12px 10px;
+      font-size: 18px;
+      max-width: 70%;
+      flex: 1;
+    }
+
+    &-right {
+      flex: 1;
+      max-width: 160px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      margin-right: 10px;
+      flex-direction: column-reverse;
+      justify-content: flex-end;
+
+      .order-img {
+        height: 60px;
+        width: auto;
+      }
+    }
+  }
+  &-info-order {
+    padding-bottom: 45px;
+  }
+
+  .goods-store-Logistics__title {
+    padding: 5px 16px;
+
+    &__address {
+      font-size: 14px;
+      font-weight: 700;
+      padding-bottom: 8px;
+
+      &__LogisticsAddress {
+        margin-right: 15px;
+      }
+    }
+  }
+
+  // 收货地址
+  .user-address {
+    font-size: 14px;
+
+    .base {
+      display: flex;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+
+    .name {
+      line-height: 20px;
+      color: $mutedColor;
+    }
+
+    .phone {
+      color: $lightColor;
+      margin-left: 10px;
+    }
+
+    .detail {
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+
+      .tips {
+        border-radius: 4px;
+        padding: 2px 4px;
+        font-size: 10px;
+        line-height: 14px;
+
+        background: $mainColor;
+        color: $whiteColor;
+        margin-right: 10px;
+      }
+    }
+  }
+  // 订单商品信息
+  .order-goods {
+    padding-bottom: 8px;
+
+    &-box {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+
+      &__left {
+        width: 94px;
+        height: 94px;
+        margin-right: 12px;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      &__right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 3px;
+        padding-bottom: 3px;
+
+        .title {
+          font-size: 14px;
+          line-height: 18px;
+          @include ml-ellipsis;
+          margin-bottom: 4px;
+        }
+
+        .size-attr {
+          background-color: $tintBorderColor;
+          font-size: 10px;
+          color: $mutedColor;
+          border-radius: 4px;
+          padding: 3px 6px;
+          line-height: 12px;
+        }
+
+        .price {
+          white-space: nowrap;
+
+          .tips {
+            font-size: 10px;
+            color: $mainColor;
+            border-radius: 4px;
+            border: 1px solid $mainColor;
+            padding: 3px 4px;
+            line-height: 10px;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+
+    .vip {
+      background: linear-gradient(180deg, #e6c282 0%, #d3a149 100%);
+      border-radius: 35px;
+      font-size: 10px;
+      line-height: 14px;
+      color: $whiteColor;
+      padding: 3px 6px;
+      margin-right: 10px;
+    }
+
+    // 底部按钮
+    &-footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      border-top: 1px solid #f8f8f8;
+      width: 100%;
+      padding: 10px;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  .orderList {
+    &-title {
+      display: flex;
+      background-color: $whiteColor;
+      flex-direction: row;
+      height: 48px;
+      line-height: 48px;
+      border-top: 1px solid $grayBgColor;
+
+      span {
+        flex: 1;
+        text-align: center;
+        align-items: center;
+        font-size: 16px;
+        line-height: 48px;
+        position: relative;
+
+        &.active {
+          color: $mainColor;
+          font-size: 600;
+
+          &::after {
+            content: "";
+            background: $mainColor;
+            width: 18px;
+            height: 3px;
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+      }
+    }
+
+    &-card {
+      position: relative;
+      border-bottom: 1px solid $grayBgColor;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &-title {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        .status {
+          font-size: 14px;
+          color: $mainColor;
+        }
+      }
+
+      &-content {
+        display: flex;
+        width: 100%;
+        background: #ffffff;
+
+        &_image {
+          width: 94px;
+          margin-right: 10px;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        &_detail {
+          flex: 1;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .goods-title {
+            @include ml-ellipsis;
+            font-size: 14px;
+            line-height: 16px;
+            margin-bottom: 8px;
+          }
+
+          .goods-num {
+            color: $mutedColor;
+            line-height: 34px;
+            font-size: 12px;
+            align-self: flex-start;
+          }
+
+          .goods-price {
+            font-size: 16px;
+          }
+        }
+      }
+
+      &-btns {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 15px;
+        .btn {
+          font-size: 14px;
+          line-height: 16px;
+          padding: 4px 12px;
+          margin-left: 12px;
+          border-radius: 25px;
+          color: $mutedColor;
+          border: 1px solid $mutedColor;
+
+          &.main {
+            color: $mainColor;
+            border: 1px solid $mainColor;
+          }
+        }
+      }
+    }
+
+    &_footer {
+      width: 100%;
+      margin-top: 10px;
+
+      .dropload-dom {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+//
+.pay {
+  &-amount {
+    margin-top: 2px;
+    background-color: $whiteColor;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  &-btn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 80px 15px;
+  }
+
+  &-result {
+    height: calc(100vh - 50px);
+    background-color: $whiteColor;
+    text-align: center;
+    padding: 20px;
+  }
+}
+
+//交易密码
+.forgetPaw {
+  font-size:12px;
+  margin-top:6px;
+  color:rgb(30,116,228);
+}

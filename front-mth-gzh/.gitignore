@@ -1,0 +1,10 @@
+# Pakeage Files
+node_modules/**
+# 项目文件pakeage
+mth_**/node_modules/**
+# 代理
+agent/**
+# 商城
+mall/**
+# 商户
+store/**

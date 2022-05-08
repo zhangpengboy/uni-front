@@ -1,0 +1,28 @@
+@import "../js-variable.scss";
+
+/**
+  * *  全局修改vant默认样式
+  */
+.van-nav-bar__title {
+  font-weight: 700;
+  font-size: 17px;
+}
+.van-picker__confirm {
+  color: $mainColor;
+}
+
+.van-empty__image {
+  width: 206px;
+  height: 142px;
+}
+// icon
+.van-nav-bar .van-icon {
+  color: $textColor;
+}
+.van-field__label {
+  width: 140px;
+}
+.van-uploader__preview-image {
+  width: 166px;
+  height: 106px;
+}

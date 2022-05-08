@@ -1,0 +1,56 @@
+{
+  "name": "front-bit-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.168",
+    "@types/numeral": "^2.0.1",
+    "axios": "^0.21.1",
+    "core-js": "^3.6.5",
+    "element-ui": "^2.15.1",
+    "immer": "^9.0.1",
+    "moment": "^2.29.1",
+    "numeral": "^2.0.6",
+    "vue": "^2.6.11",
+    "vue-router": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/swiper": "^5.4.2",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.2.1",
+    "@vue/babel-preset-jsx": "^1.2.4",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/eslint-config-standard": "^5.1.2",
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "less": "^3.0.4",
+    "less-loader": "^5.0.0",
+    "lint-staged": "^9.5.0",
+    "typescript": "~4.1.5",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue,ts,tsx}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}

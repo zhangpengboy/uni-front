@@ -1,0 +1,208 @@
+// 公共的商品排版样式
+.goods {
+
+	&-list {
+		padding-left: 24upx;
+		padding-right: 24upx;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	&-item {
+		// width: 48.5%;
+		border-radius: 20upx;
+		background-color: #fff;
+		margin: 0 0 25upx 0;
+		box-shadow: 0upx 5upx 25upx rgba(0, 0, 0, 0.1);
+
+		&>image {
+			height: 340upx;
+			width: 100%;
+			border-radius: 20upx 20upx 0 0;
+		}
+
+		.name {
+			width: 92%;
+			padding: 10upx 4% 0;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 2;
+			text-align: justify;
+			overflow: hidden;
+			font-size: 28upx;
+			line-height: 38upx;
+			margin-bottom: 10upx;
+		}
+		
+		.cateName {
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 1;
+			text-align: justify;
+			overflow: hidden;
+			padding: 10upx 4% 0;
+			font-size: 24upx;
+			font-weight: 300;
+			line-height: 34upx;
+			color: #999999;
+		}
+		.brandname {
+			display: flex;
+			align-items: center;
+			font-weight: bold;
+
+			&>image {
+				width: 40upx;
+				height: 40upx;
+				margin-right: 20upx;
+			}
+		}
+
+		.info {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+			width: 94%;
+			padding: 20upx 3%;
+			
+			.price {
+				color: $uni-color-main;
+				font-size: 28upx;
+				font-weight: 600;
+				white-space: normal;
+			}
+
+			.slogan {
+				color: #807c87;
+				font-size: 24upx;
+			}
+		}
+	}
+}
+.goodsListV2 {
+	width: 702upx;
+	// height: 494upx;
+	background: #FFFFFF;
+	border-radius: 16upx;
+	overflow: hidden;
+	margin: 24upx;
+	.goodsListV2_top {
+		box-sizing: border-box;
+		padding: 24upx;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		// margin: 24upx;
+		.left {
+			display: flex;
+			align-items: center;
+			flex: 1;
+			width: 96upx;
+			height: 96upx;
+			.avatar {
+				width: 96upx;
+				height: 96upx;
+				border-radius: 50%;
+				overflow: hidden;
+				image {
+					width: 96upx;
+					height: 96upx;
+					background: #EB6132;
+					border-radius: 50%;
+				}
+			}
+			.content {
+				padding-left: 28upx;
+				height: 96upx;
+				line-height: 96upx;
+			}
+			.username {
+				font-size: 32upx;
+				color: #333333;
+				vertical-align: top;
+				font-weight: 500;
+				margin-bottom: 14upx;
+				display: inline-block;
+				overflow: hidden; //超出的文本隐藏
+				text-overflow: ellipsis; //溢出用省略号显示
+				white-space: nowrap; //溢出不换行
+				width: 450upx;
+			}
+			.style {
+				display: inline-block;
+				font-size: 22upx;
+				font-weight: 300;
+				color: #EB6133;
+				padding: 4upx 8upx;
+				background: #FFEEE8;
+				border-radius: 8upx;
+			}
+			.subtract {
+				display: inline-block;
+				margin-left: 24upx;
+				font-size: 22upx;
+				font-weight: 300;
+				color: #EB6133;
+				border-radius: 8upx;
+				border: 2upx solid #EB6133;
+				padding: 2upx 8upx;
+			}
+		}
+		
+		.right {
+			color: #666;
+		}
+	}
+	.albumList {
+		width: 100%;
+		white-space: nowrap;
+		padding: 0upx 0upx 24upx 24upx;
+		box-sizing: border-box;
+	}
+	.goodsListV2_body {
+			display: inline-block;
+			margin-right: 16upx;
+			width: 224upx;
+			// height: 224upx;
+			overflow: hidden;
+			// font-weight: bold;
+			// vertical-align:middle;
+			color: #8B93AA;
+			.imgwrap {
+				width: 224upx !important;
+				height: 224upx !important;
+				image {
+					width: 224upx;
+					height: 224upx;
+					border-radius: 16upx;
+				}
+			}
+			.infowrap {
+				.title {
+					font-size: 26upx;
+					font-weight: 300;
+					color: #333333;
+					// text-align: center;
+					display: inline-block;
+					overflow: hidden; //超出的文本隐藏
+					text-overflow: ellipsis; //溢出用省略号显示
+					white-space: nowrap; //溢出不换行
+					width: 210upx;
+					margin-top: 16upx;
+				}
+				.price {
+					// text-align: center;
+					color: #EB6133;
+					// display: inline-block;
+					overflow: hidden; //超出的文本隐藏
+					text-overflow: ellipsis; //溢出用省略号显示
+					white-space: nowrap; //溢出不换行
+					width: 200upx;
+				}
+			}
+	}
+	.albumList .goodsListV2_body:last-child {
+		margin-right: 24upx;
+	}
+}

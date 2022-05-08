@@ -1,0 +1,60 @@
+@import "js-variable";
+
+// =========================全局布局==============================
+// 通用容器
+.main-wrap {
+  background: $whiteColor;
+  margin-left: 16px;
+  margin-right: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+
+  &-cont {
+    padding: 14px;
+  }
+}
+
+// 通用按钮
+.cbtn {
+  font-size: 14px;
+  line-height: 16px;
+  padding: 4px 12px;
+  margin-left: 12px;
+  border-radius: 25px;
+  color: $mutedColor;
+  border: 1px solid $mutedColor;
+
+  &.main {
+    color: $mainColor;
+    border: 1px solid $mainColor;
+  }
+}
+
+.but {
+  width: 262px;
+  height: 38px;
+  font-size: 14px;
+  color: #fff;
+  line-height: 38px;
+  text-align: center;
+  margin: 0 auto;
+  border: 1px solid #eb6133;
+  background: linear-gradient(180deg, #F1722C 0%, #EB6133 100%);
+}
+// 固定底部
+.footer {
+  position: fixed;
+  bottom: 25px;
+  left: 15%;
+}
+.backgroundWhite {
+  background:#fff;
+}
+.uploader-bgImg {
+  width: 166px;
+  height: 106px;
+}

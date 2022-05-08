@@ -1,0 +1,347 @@
+<!--
+ * @Author       : Lance Yi <latticeyi@gmail.com>
+ * @Date         : 2020-11-05 16:16:26
+ * @Description  : 商品详情信息
+-->
+<template>
+  <div class="goods">
+    <el-card class="box-card">
+      <div slot="header">
+        <span>商品详情信息</span>
+      </div>
+      <el-form
+        class="goods-form"
+        ref="goodsInfoForm"
+        :model="form"
+        label-width="110px"
+        size="medium"
+        label-suffix=":"
+      >
+        <el-row :gutter="20">
+          <el-col :span="24" :md="24">
+            <el-form-item
+              label="商品标签"
+              prop="goodsLabel"
+              required
+              :rules="[{ required: true, message: '商品标签不能为空' }]"
+            >
+              <el-input
+                :disabled="look"
+                type="textarea"
+                :rows="5"
+                maxlength="200"
+                show-word-limit
+                v-model="form.goodsLabel"
+                placeholder="请输入商品商品标签"
+              ></el-input>
+            </el-form-item>
+          </el-col>
+
+          <el-col :span="24" :md="24">
+            <el-form-item
+              label="商品轮播图"
+              prop="bannerImg"
+              required
+              :rules="[{ required: true, message: '轮播图不能为空' }]"
+            >
+              <el-upload
+                :disabled="look"
+                action="#"
+                list-type="picture-card"
+                :limit="5"
+                :file-list="bannerFileList"
+                :on-preview="handlePictureCardPreview"
+                :on-remove="handleRemoveBanner"
+                :http-request="uploadImg"
+                :before-upload="beforeAvatarUpload"
+                :data="{ type: 'banner' }"
+              >
+                <i class="el-icon-plus"></i>
+                <div slot="tip" class="el-upload__tip">
+                  建议尺寸750*750, 只能上传jpg/png文件，且不超过1M
+                </div>
+              </el-upload>
+            </el-form-item>
+          </el-col>
+
+          <!-- <el-col :span="24" :md="24">
+            <el-form-item
+              label="商品详情图"
+              prop="detailImg"
+              required
+              :rules="[{ required: true, message: '请添加详情图' }]"
+            >
+              <Tinymce ref="editor" v-model="form.detailImg" :height="400" :look="look" />
+            </el-form-item>
+          </el-col> -->
+          <el-col :span="24" :md="24">
+            <el-form-item
+              label="商品详情图"
+              prop="detailImg"
+              required
+              :rules="[{ required: true, message: '请添加详情图' }]"
+            >
+              <el-upload
+                :disabled="look"
+                action="#"
+                list-type="picture-card"
+                :limit="30"
+                :file-list="detailsFileList"
+                :on-preview="handlePictureCardPreview"
+                :on-remove="handleRemoveDetails"
+                :http-request="uploadImgDetails"
+                :before-upload="beforeAvatarUploadDetail"
+                :data="{ type: 'banner' }"
+              >
+                <i class="el-icon-plus"></i>
+                <div slot="tip" class="el-upload__tip">
+                  建议尺寸800*800, 只能上传jpg/png文件，且不超过3M
+                </div>
+              </el-upload>
+            </el-form-item>
+          </el-col>
+        </el-row>
+
+        <el-form-item>
+          <el-button
+            type="info"
+            size="default"
+            block
+            @click="backPrefixForm"
+            icon="el-icon-arrow-left el-icon--left"
+            >返回，上一步</el-button
+          >
+          <el-button
+            type="primary"
+            size="default"
+            block
+            v-if="look"
+            @click="lookNextForm"
+            v-loading.fullscreen.lock="fullscreenLoading"
+            >查看, 下一步<i class="el-icon-arrow-right el-icon--right"></i
+          ></el-button>
+          <el-button
+            type="primary"
+            size="default"
+            block
+            v-if="!look"
+            @click="submitNextForm"
+            v-loading.fullscreen.lock="fullscreenLoading"
+            >保存，下一步<i class="el-icon-arrow-right el-icon--right"></i
+          ></el-button>
+        </el-form-item>
+      </el-form>
+      <el-dialog :visible.sync="dialogVisible" title="大图">
+        <img width="100%" :src="dialogImageUrl" />
+      </el-dialog>
+    </el-card>
+  </div>
+</template>
+<script>
+import Tinymce from "@/components/Tinymce";
+import { uploadImg } from "@/api/upload";
+import { addGoodsDetail, updateGoodsDetail } from "@/api/goods";
+export default {
+  name: "GoodsInfoForm",
+  props: {
+    // 是否修改
+    isEdit: {
+      type: Boolean,
+      default: false,
+    },
+    look: {
+      type: Boolean,
+      default: false,
+    },
+    // 商品详情对象
+    value: {
+      type: Object,
+      default: () => {
+        return {};
+      },
+    },
+    // 商品基础信息
+    goodsBase: {
+      type: Object,
+      default: () => {
+        return {};
+      },
+    },
+  },
+  components: { Tinymce },
+  data() {
+    return {
+      // 基础商品表单
+      form: _.assign({}, this.value),
+      // 加载层
+      fullscreenLoading: false,
+      // 是否显示大图浏览
+      dialogVisible: false,
+      // banner图列表
+      bannerFileList: [],
+      detailsFileList: [],
+      // 浏览大图URL
+      dialogImageUrl: "",
+    };
+  },
+  watch: {
+    // 监听异步获取表单信息赋值
+    value: function (nVal, oVal) {
+      this.form = nVal;
+      if (this.isEdit) {
+        this.bannerFileList = [];
+        const _list = _.split(this.form.bannerImg, ";");
+        _.each(_list, (v) => {
+          const _imgObj = {
+            name: Math.random(10000),
+            url: v,
+          };
+          this.bannerFileList.push(_imgObj);
+        });
+        this.detailsFileList = [];
+        const _list1 = _.split(this.form.detailImg, ",");
+        _.each(_list1, (v) => {
+          const _imgObj = {
+            name: Math.random(10000),
+            url: v,
+          };
+          this.detailsFileList.push(_imgObj);
+        });
+      }
+    },
+  },
+  methods: {
+    /** 图片上传之前判断 */
+    beforeAvatarUpload(file) {
+      const isJPG = file.type === "image/jpeg" || file.type === "image/png";
+      const isLt1M = file.size / 1024 / 1024 < 1;
+      if (!isJPG) {
+        this.$message.error("上传图片只能是JPG、PNG格式!");
+      }
+      if (!isLt1M) {
+        this.$message.error("上传图片大小不能超过1MB!");
+      }
+      return isJPG && isLt1M;
+    },
+    /** 图片上传之前判断 */
+    beforeAvatarUploadDetail(file) {
+      const isJPG = file.type === "image/jpeg" || file.type === "image/png";
+      const isLt3M = file.size / 1024 / 1024 < 3;
+      if (!isJPG) {
+        this.$message.error("上传图片只能是JPG、PNG格式!");
+      }
+      if (!isLt3M) {
+        this.$message.error("上传图片大小不能超过3MB!");
+      }
+      return isJPG && isLt3M;
+    },
+    /** 自定义上传图片 */
+    uploadImg(e) {
+      uploadImg(e.file).then((res) => {
+        if (res.code == 200) {
+          const _file = {
+            name: e.file.name,
+            url: res.data,
+          };
+          this.bannerFileList = _.concat(this.bannerFileList, _file);
+        } else {
+          this.$msgError("上传图片失败,请重新上传!");
+        }
+      });
+    },
+    uploadImgDetails(e) {
+      uploadImg(e.file).then((res) => {
+        if (res.code == 200) {
+          const _file = {
+            name: e.file.name,
+            url: res.data,
+          };
+          this.detailsFileList = _.concat(this.detailsFileList, _file);
+        } else {
+          this.$msgError("上传图片失败,请重新上传!");
+        }
+      });
+    },
+    /** 移除banner图 */
+    handleRemoveBanner(file, fileList) {
+      _.remove(this.bannerFileList, (v) => {
+        return v.url == file.url;
+      });
+    },
+    /** 移除详情图 */
+    handleRemoveDetails(file, fileList) {
+      _.remove(this.detailsFileList, (v) => {
+        return v.url == file.url;
+      });
+    },
+    /** 浏览图片 */
+    handlePictureCardPreview(file) {
+      this.dialogImageUrl = file.url;
+      this.dialogVisible = true;
+    },
+    /** 下一步 */
+    submitNextForm() {
+      // this.$refs["goodsBaseForm"].validate((valid) => {
+      //   if (valid) {
+      // 组装提交数据对象
+      this.form.bannerImg = [];
+      _.map(this.bannerFileList, (v, i) => {
+        this.form.bannerImg += v.url;
+        if (i !== this.bannerFileList.length - 1) {
+          this.form.bannerImg += ";";
+        }
+      });
+      this.form.detailImg = [];
+      _.map(this.detailsFileList, (v, i) => {
+        this.form.detailImg += v.url;
+        if (i !== this.detailsFileList.length - 1) {
+          this.form.detailImg += ",";
+        }
+      });
+      this.form = _.assign(this.form, {
+        goodsId: this.goodsBase.id,
+        goodsName: this.goodsBase.goodsName,
+      });
+      if (this.form.goodsLabel == "" || this.form.goodsLabel == undefined)
+        return this.$message.error("商品标签不能为空!");
+      if (this.form.bannerImg == "" || this.form.bannerImg == undefined)
+        return this.$message.error("商品轮播图不能为空!");
+      if (this.form.detailImg == "" || this.form.detailImg == undefined)
+        return this.$message.error("商品详情不能为空!");
+      this.fullscreenLoading = true;
+      if (this.form.id == undefined) {
+        // 新增
+        addGoodsDetail(this.form).then((res) => {
+          this.fullscreenLoading = false;
+          this.$set(this.form, "id", res.data);
+          this.$emit("setValue", this.form);
+          this.$emit("steps", "GOODS_SKU");
+        });
+      } else {
+        // 修改
+        updateGoodsDetail(this.form).then((res) => {
+          this.fullscreenLoading = false;
+          this.$emit("setValue", this.form);
+          this.$emit("steps", "GOODS_SKU");
+        });
+      }
+      setTimeout(() => {
+        this.fullscreenLoading = false;
+      }, 2000);
+      //   }
+      // });
+    },
+    // 查看 下一步
+    lookNextForm() {
+      this.$emit("setValue", this.form);
+      this.$emit("steps", "GOODS_SKU");
+    },
+    // 上一步
+    backPrefixForm() {
+      this.$emit("steps", "GOODS_BASE");
+    },
+  },
+};
+</script>
+<style lang="scss" scoped>
+</style>

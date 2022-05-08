@@ -1,0 +1,74 @@
+<!--
+ * @Author       : Lance Yi <latticeyi@gmail.com>
+ * @Date         : 2020-11-07 11:27:15
+ * @Description  : Description
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<link rel="stylesheet" href="../assets/css/base.css">
+	<link rel="stylesheet" href="./css/index.css">
+	<title>商务合作</title>
+	<style>
+	</style>
+</head>
+
+<body>
+	<div class="content-box operator-bg">
+		<div class="input-box">
+			<ul>
+				<li>
+					<span class="input-name ">称呼</span>
+					<input class="input name" type="text" name="name" placeholder="怎么称呼您" /></li>
+				<li>
+					<span class="input-name ">电话</span>
+					<input class="input tel" type="tel" name="tel" value="" placeholder="请输入您的电话" /></li>
+				<li>
+					<span class="input-name">合作意向</span>
+
+					<input class="radio" id="operator" type="radio" name="radio" value="Operator" checked />
+
+					<span data-value='Operator' class="radio-text operator">代理商(加盟)</span>
+
+					<input class="radio" id="partner" type="radio" name="radio" value="Partner" />
+
+					<span data-value='Partner' class="radio-text partner">品牌商(入驻)</span>
+
+				</li>
+				<li class="text-textarea">
+					<div class="input-name">留言</div>
+					<textarea cols="2" rows="3" placeholder="请输入你的留言" class="textaea remark"></textarea>
+				</li>
+			</ul>
+			<div class="area-text">客服电话：<a href="tel:4006235236" onclick="Utils.gotosumit('callPhone')">4006235236</a>
+			</div>
+		</div>
+		<button class="button" id="submitForm" type="button"><span>提交信息</span></button>
+		<div class="box-mark"></div>
+		<div class="alertHtml"></div>
+		<div class="footer-box">
+			<div class="type-box">
+				<li data-value='Operator' class='first-item first-active'>代理商</li>
+				<li data-value='Partner' class='two-item'>品牌商</li>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdn.bootcss.com/vConsole/3.2.0/vconsole.min.js"></script>
+	<script>
+		// var vConsole = new VConsole();
+		// console.log(vConsole.version);
+		// console.log(window.localStorage.getItem("userWeixinInfo"))
+	</script>
+	<script type="text/javascript" src="../assets/js/adaptive.js"></script>
+	<script type="text/javascript" src="../assets/js/config.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../assets/js/lodash.min.js"></script>
+	<script type="text/javascript" src='../assets/js/utils.js'></script>
+	<script type="text/javascript" src="../assets/js/url.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>

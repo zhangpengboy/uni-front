@@ -1,0 +1,222 @@
+// 标准容器
+.container {
+  box-sizing: border-box;
+  width: 1200px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container-wrap {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.color-main {
+  color: #1e74e4 !important;
+}
+
+.jms-flex {
+  display: flex;
+  margin-bottom: 60px;
+}
+
+// 通用标题
+.jms-title {
+  position: relative;
+  font-size: 22px;
+  line-height: 33px;
+  font-weight: 600;
+  padding-left: 15px;
+  margin-right: -15px;
+  margin-left: -15px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  &::before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 4px;
+    height: 33px;
+    background: #1e74e4;
+  }
+
+  &-link {
+    float: right;
+    font-size: 16px;
+    color: #999;
+    line-height: 33px;
+  }
+}
+
+.jms-left-box {
+  position: relative;
+  width: 288px;
+  background-color: #fff;
+  padding: 12px;
+  margin-right: 16px;
+  .bg-img {
+    height: 272px;
+    overflow: hidden;
+  }
+  .tender-bg-img {
+    height: 351px;
+    overflow: hidden;
+  }
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    .title {
+      font-size: 24px;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .btn {
+      display: block;
+      width: 104px;
+      height: 32px;
+      line-height: 32px;
+      border: 1px solid #fff;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: color 0.3s, background 0.3s;
+      &:hover {
+        background: #1e74e4;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.jms-right-box {
+  flex: 1;
+  background-color: #fff;
+  padding: 24px 32px;
+  display: flex;
+  border: 1px solid white;
+  border-radius: 3px;
+  transition: all 0.3s;
+  &:hover {
+    border-color: #1890ff99;
+  }
+
+  .content {
+    flex: 1;
+    border-right: 1px solid #e6e6e6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    .name {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 18px;
+      display: flex;
+      align-items: center;
+    }
+
+    .product {
+      display: flex;
+
+      &-item {
+        font-size: 15px;
+        color: #999;
+        width: 50%;
+        .label {
+          margin-bottom: 22px;
+        }
+        .value {
+          font-size: 18px;
+          color: #333;
+          margin-bottom: 20px;
+          line-height: 25px;
+          &.income {
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 45px;
+          }
+          &.money {
+            margin-bottom: 40px;
+          }
+        }
+        .line {
+          width: 160px;
+          height: 1px;
+          background: #e6e6e6;
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+        .progress {
+          width: 160px;
+        }
+      }
+    }
+  }
+  .from {
+    width: 300px;
+    padding: 40px 0px 40px 40px;
+    &-label,
+    button,
+    .el-input {
+      margin-bottom: 20px;
+    }
+    .btn-buy {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+.tips {
+  background: #fb8e44;
+  border-radius: 16px 16px 16px 0px;
+  color: #fff;
+  padding: 4px 12px;
+  font-size: 14px;
+  margin-left: 12px;
+
+  &.hot {
+    background-color: #e63b3b;
+  }
+}
+
+.tender-layout {
+  padding: 0;
+  background: transparent;
+  margin: 0 -10px;
+}
+
+// 导航栏
+.jms-tabs {
+  margin-top: 60px;
+  display: block;
+  display: flex;
+  margin-bottom: 30px;
+  &-bar {
+    display: block;
+    padding: 10px 22px;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #e6e6e6;
+    &.active,
+    &:hover {
+      color: #fff;
+      background-color: #1e74e4;
+    }
+  }
+}
+
+// 白色背景
+.bg-white {
+  background: #fff;
+}

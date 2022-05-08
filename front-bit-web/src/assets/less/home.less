@@ -1,0 +1,203 @@
+.home {
+  .el-carousel__indicators--horizontal {
+    bottom: 60px;
+  }
+  .inner {
+    position: relative;
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    color: #fff;
+    .title {
+      padding-top: 128px;
+      font-size: 44px;
+      margin-bottom: 16px;
+    }
+    .sub-title {
+      font-size: 52px;
+      margin-bottom: 50px;
+      line-height: 73px;
+    }
+    .desc {
+      display: block;
+      font-size: 22px;
+      line-height: 1.8;
+      margin-bottom: 32px;
+      max-width: 510px;
+    }
+    .btn {
+      display: block;
+      cursor: pointer;
+      width: 192px;
+      height: 56px;
+      line-height: 56px;
+      background: #ffffff;
+      opacity: 1;
+      border-radius: 4px;
+      text-align: center;
+      color: #1e74e4;
+    }
+
+    .img {
+      width: 485px;
+      height: 324px;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  &-row {
+    position: relative;
+    background-color: #fff;
+    height: 240px;
+    top: -48px;
+    z-index: 10;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    text-align: center;
+    margin-bottom: -48px;
+  }
+
+  &-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    &-icon {
+      width: 56px;
+      height: 56px;
+      overflow: hidden;
+      margin-bottom: 24px;
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &-title {
+      font-size: 24px;
+      line-height: 33px;
+      margin-bottom: 8px;
+    }
+
+    &-desc {
+      line-height: 22px;
+      color: #999999;
+    }
+  }
+
+  // 云算力
+  .cloud-bg {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat no-repeat;
+    padding-bottom: 60px;
+  }
+
+  // 新闻咨询
+  &-news {
+    box-sizing: content-box;
+    min-height: 600px;
+    background-color: #fff;
+    padding-top: 5px;
+    padding-bottom: 60px;
+
+    &-one {
+      min-height: 490px;
+      border: 1px solid #e6e6e6;
+      cursor: pointer;
+      overflow: hidden;
+      &:hover {
+        /deep/ img {
+          position: absolute;
+          transform: scale(1.1);
+        }
+      }
+      .el-image {
+        display: block;
+        width: 100%;
+        height: 352px;
+        overflow: hidden;
+        /deep/ img {
+          transition: all 0.5s;
+        }
+      }
+      .content {
+        padding: 24px 16px;
+        font-size: 14px;
+        &-time {
+          margin-bottom: 16px;
+          line-height: 20px;
+          color: #999999;
+        }
+        &-title {
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 22px;
+          margin-bottom: 8px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        &-desc {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          line-height: 20px;
+          color: #999999;
+        }
+      }
+    }
+  }
+
+  // app下载
+  &-app {
+    margin-bottom: 60px;
+    
+    &-content {
+      position: absolute;
+      bottom: 60px;
+      left: 60px;
+      color: #fff;
+    }
+
+    &-links {
+      display: flex;
+      align-items: center;
+    }
+    &-ios,
+    &-android {
+      img {
+        width: 32px;
+        height: 32px;
+        margin-right: 8px;
+      }
+      display: flex;
+      align-items: center;
+      height: 56px;
+      border-radius: 4px;
+      font-size: 18px;
+      padding: 16px 25px;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: 1px solid transparent;
+      &:hover {
+        border: 1px solid #fff;
+      }
+      margin-right: 40px;
+      margin-bottom: 20px;
+    }
+    &-ios {
+      background-color: #041e43;
+    }
+    &-android {
+      background-color: #a7c748;
+    }
+    &-tips {
+      font-size: 18px;
+      line-height: 25px;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+### HBuilder X ###
+.idea/
+node_modules/
+unpackage/*
+
+
+### VS Code ###
+.vscode/

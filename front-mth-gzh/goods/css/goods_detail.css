@@ -1,0 +1,47 @@
+html,
+body {
+    height: auto;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    list-style: none;
+}
+
+.content-box {
+    max-width: 750px;
+    background-color: #f8f8f8; 
+}
+.detailImg {
+    padding-top: 6px;
+}
+
+.alertHtml {
+    position: fixed;
+    left: 25%;
+    top: 40%;
+    line-height: 2rem;
+    text-align: center;
+    padding: 0.1rem 0.1rem;
+    width: 50%;
+    background: white;
+    display: none;
+    font-size: 0.32rem;
+    z-index: 999;
+    font-family: PingFang SC;
+    border-radius: 0.2rem;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+
+}
+
+.box-mark {
+    background: #a6a5a5;
+    opacity: 0.2;
+    min-width: 750px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+}

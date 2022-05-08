@@ -1,0 +1,369 @@
+@keyframes waveCloud1 {
+  0% {
+    transform: translateX(200upx);
+  }
+  50% {
+    transform: translateX(-300upx);
+  }
+  100% {
+    transform: translateX(200upx);
+  }
+}
+@keyframes waveCloud2 {
+  0% {
+    transform: translateX(146upx);
+  }
+  50% {
+    transform: translateX(-300upx);
+  }
+  100% {
+    transform: translateX(146upx);
+  }
+}
+
+@keyframes waveCorn {
+	0% {
+		transform: translateY(-3px);
+	}
+	50% {
+		transform: translateY(3px);
+	}
+	100% {
+		transform: translateY(-3px);
+	}
+}
+
+@keyframes waveSum {
+	0% {
+		transform: rotate(-2deg);
+	}
+	50% {
+		transform: rotate(2deg);
+	}
+	100% {
+		transform: rotate(-2deg);
+	}
+}
+.farm {
+		height: 100%;
+		width: 100%;
+		position: fixed;
+		overflow: hidden;
+		background-image: url('https://hyf-static.noone.ren/assets/game/bg.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		z-index: 0;
+
+	&-sum {
+		width: 700upx;
+		height: 700upx;
+		position: absolute;
+		background-image: url('https://hyf-static.noone.ren/assets/game/sum.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		top: 100upx;
+		left: -250upx;
+		z-index: 1;
+		animation: waveSum 10s infinite ease-in-out;
+	}
+	&-cloud1 {
+		position: absolute;
+		width: 240upx;
+		height: 120upx;
+		top: 200upx;
+		left: 0;
+		background: url('https://hyf-static.noone.ren/assets/game/cloud1.png') no-repeat center/100%;
+		animation: waveCloud1 120s infinite linear;
+		z-index: 1;
+	}
+	
+	&-cloud2 {
+		position: absolute;
+		width: 146upx;
+		height: 60upx;
+		top: 500upx;
+		right: 0;
+		background: url('https://hyf-static.noone.ren/assets/game/cloud2.png') no-repeat center/100%;
+		animation: waveCloud2 120s infinite linear;
+		z-index: 1;
+	}
+
+	/* 护栏 */
+	&-rail {
+		position: absolute;
+		width: 148upx;
+		height: 50upx;
+		bottom: 350upx;
+		left: 0;
+		background-image: url('https://hyf-static.noone.ren/assets/game/hl.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		z-index: 1;
+	}
+	/* 牛 */
+	&-cow {
+		position: absolute;
+		width: 140upx;
+		height: 80upx;
+		bottom: 300upx;
+		left: 20upx;
+		background-image: url('https://hyf-static.noone.ren/assets/game/nn.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		z-index: 1;
+	}
+
+	&-right {
+		position: absolute;
+		min-width: 220upx;
+		right: 0;
+		top: 156upx;
+		
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+				
+		/* 资产 */
+		.assets {
+			display: flex;
+			align-items: center;
+			height: 72upx;
+			color: #149444;
+			font-size: 26upx;
+			line-height: 88upx;
+			font-weight: 500;
+			background: rgba(255,255,255,0.7);
+			border-top-left-radius: 48upx;
+			border-bottom-left-radius: 48upx;
+			padding-right: 10upx;
+			.avatar{
+					margin-left: 8upx;
+					margin-right: 18upx;
+					width: 64upx;
+					height: 64upx;
+					border-radius: 50%;
+					overflow: hidden;
+					
+					image {
+						width: 64upx;
+						height: 64upx;
+					}
+			}
+		}
+		
+		/* 右边icon */
+		.market,
+		.sign,
+		.friend {
+			min-width: 80upx;
+			margin-top: 30upx;
+			margin-right: 40upx;
+			z-index: 2;
+			text-align: center;
+			.icon {
+				width: 80upx;
+				height: 80upx;
+			}
+		}
+		
+		.market {
+			.icon {
+				background: url('https://hyf-static.noone.ren/assets/game/market.png') no-repeat center/100%;
+			}
+		}
+		
+		.sign {
+			.icon {
+				background: url('https://hyf-static.noone.ren/assets/game/sign.png') no-repeat center/100%;
+			}
+		}
+
+		.friend {
+			.icon {
+				background: url('https://hyf-static.noone.ren/assets/game/friends.png') no-repeat center/100%;
+			}
+		}		
+	}
+	
+	/* 通用文字 */
+	.comtext {
+		text-align: center;
+		background-color: #F8B020;
+		color: $uni-text-color-inverse;
+		border-radius: 25upx;
+		height: 40upx;
+		font-size: 26upx;
+		font-weight: 500;
+		line-height: 40upx;
+		margin-top: -16upx;
+	}
+	
+	/* 浇水 */
+	.water {
+		position: absolute;
+		bottom: 56upx;
+		right: 30upx;
+		.tips {
+			min-width: 130upx;
+			height: 56upx;
+			line-height: 46upx;
+			background-image:  url('https://hyf-static.noone.ren/assets/game/tips.png');
+			background-repeat: no-repeat;
+			background-size: 100%;
+			color: #59B9F4;
+			text-align: center;
+			font-size: 24upx;
+		}
+		.icon {
+			width: 120upx;
+			height: 120upx;
+			background:  url('https://hyf-static.noone.ren/assets/game/water.png') no-repeat center/100%;
+		}
+	}
+	
+	/* 树 */
+	.vatree {
+		position: absolute;
+		left: 50%;
+		bottom: 120upx;
+		transform: translateX(-50%);
+		text-align: center;
+		z-index: 1;
+		/* 玉米 */
+		&-corn {
+			position: absolute;
+			width: 60upx;
+			height: 80upx;
+			background-image:  url('https://hyf-static.noone.ren/assets/game/corn.png');
+			background-position: center center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+			animation: waveCorn 2.5s infinite ease-in-out;
+			z-index: 1;
+			left: calc(50% - 30upx);
+			top: -80upx;
+			.hand {
+				position:absolute;
+				width: 48upx;
+				height: 49upx;
+				background-image:  url('https://hyf-static.noone.ren/assets/game/hand.png');
+				background-position: center center;
+				background-size: 100%;
+				background-repeat: no-repeat;
+				right: -10upx;
+				top: 20upx;
+			}
+			.number{
+				padding-top: 30upx;
+				position: relative;
+				left: -45%;
+				bottom: -50upx;
+				font-size: 20upx;
+				text-align: center;
+				white-space: nowrap; 
+				color: #149444;
+				&.white{
+					color: $uni-text-color-inverse;
+				}
+			}
+			
+			// &:nth-child(n+1) {
+			// 	top: 60upx;
+			// 	left: -10upx;
+			// }
+			// &:nth-child(n+2) {
+			// 	top: -20upx;
+			// 	left: 40upx;
+			// }
+			// &:nth-child(n+3) {
+			// 	top: -20upx;
+			// 	left: 160upx;
+			// }
+			// &:nth-child(n+4) {
+			// 	top: 60upx;
+			// 	left: 200upx;
+			// }
+			// &:nth-child(n+5) {
+			// 	top: -100upx;
+			// 	left: 100upx;
+			// }
+		}
+		/* 树 */
+		&-body {
+			z-index: 1;
+			height: 400upx;
+			background-image:  url('https://hyf-static.noone.ren/assets/game/tree-0.png');
+			background-position: bottom center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+		
+		&-footer {
+			position: relative;
+			top: calc(30upx + 100%);
+		}
+		
+		// 水壶	
+		&-kettle {
+			position: absolute;
+			width: 160upx;
+			height: 160upx;
+			left: 50%;
+			bottom: 350upx;
+			background:  url('https://hyf-static.noone.ren/assets/game/nn-kettle.png') no-repeat bottom/100%;
+			opacity: 0;
+			z-index: 2;
+		}
+		// 水滴
+		&-water {
+			position: absolute;
+			width: 42upx;
+			height: 43upx;
+			left: 50%;
+			bottom: 335upx;
+			background:  url('https://hyf-static.noone.ren/assets/game/mm-water.png') no-repeat bottom/100%;
+			opacity: 0;
+			z-index: 1;
+		}
+		
+		/* 进度条 */
+		.progress {
+			margin-top: 20upx;
+			margin-bottom: 20upx;
+			background-color: #FFF4BC;
+			.bging {
+				background: linear-gradient(90deg, #16EEFC 0%, #0377B1 100%);
+			}
+		}
+		
+		.tips {
+			max-width: 300upx;
+			font-size: 24upx;
+			font-weight: 500;
+			line-height: 34upx;
+			color: #149444;
+			text-align: center;
+			
+			.tips-btn {
+				padding-left: 40upx;
+				padding-right: 40upx;
+			}
+		}
+		
+	}
+	
+	/* 签到弹窗 */
+	.sign-model {
+		.waterimg {
+			width: 80upx;
+			height: 80upx;
+		}
+		
+		.signbtn {
+				padding-left: 46upx;
+				padding-right: 46upx;
+				background: linear-gradient(135deg, $base 0%, $change-clor 100%);
+				color: $uni-text-color-inverse;
+		}
+	}
+}

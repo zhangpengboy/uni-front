@@ -1,0 +1,198 @@
+@import "./variables.scss";
+
+// cover some element-ui styles
+.el-breadcrumb__inner,
+.el-breadcrumb__inner a {
+  font-weight: 400 !important;
+}
+
+.el-upload {
+  input[type="file"] {
+    display: none !important;
+  }
+}
+
+.el-upload__input {
+  display: none;
+}
+
+.cell {
+  .el-tag {
+    margin-right: 0px;
+  }
+}
+
+.small-padding {
+  .cell {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+.fixed-width {
+  .el-button--mini {
+    padding: 7px 10px;
+    width: 60px;
+  }
+}
+
+.status-col {
+  .cell {
+    padding: 0 10px;
+    text-align: center;
+
+    .el-tag {
+      margin-right: 0px;
+    }
+  }
+}
+
+// to fixed https://github.com/ElemeFE/element/issues/2461
+.el-dialog {
+  transform: none;
+  left: 0;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 4px;
+
+  &__header {
+    background: #eeeeee;
+    padding: 8px 10px;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+  }
+  &__title {
+    font-size: 16px;
+  }
+  &__headerbtn {
+    top: 10px;
+  }
+  &__footer {
+    padding-bottom: 15px;
+  }
+}
+
+// refine element ui upload
+.upload-container {
+  .el-upload {
+    width: 100%;
+
+    .el-upload-dragger {
+      width: 100%;
+      height: 200px;
+    }
+  }
+}
+
+// dropdown
+.el-dropdown-menu {
+  a {
+    display: block;
+  }
+}
+
+// fix date-picker ui bug in filter-item
+.el-range-editor.el-input__inner {
+  display: inline-flex !important;
+}
+
+// to fix el-date-picker css style
+.el-range-separator {
+  box-sizing: content-box;
+}
+
+.el-popper[x-placement^="bottom"] {
+  margin-top: 2px;
+}
+
+.goods-dialog {
+  .el-dialog__body {
+    padding: 0;
+  }
+}
+
+// table
+.el-table .sort-caret.ascending {
+  top: -1px;
+}
+.el-table .sort-caret.descending {
+  bottom: -1px;
+}
+
+.el-table .caret-wrapper {
+  height: 19px;
+}
+
+// el-form
+.el-form-item--small.el-form-item {
+  margin-bottom: 15px;
+}
+
+.el-form-item--mini.el-form-item {
+  margin-bottom: 5px;
+}
+
+.cx-week {
+  .el-checkbox {
+    margin-right: 5px;
+  }
+  .el-checkbox__label {
+    padding-left: 2px;
+  }
+}
+
+
+// single upload
+.avatar-uploader .el-upload {
+  border: 1px dashed #d9d9d9;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.avatar-uploader .el-upload:hover {
+  border-color: #409EFF;
+}
+.avatar-uploader-icon {
+  font-size: 28px;
+  color: #8c939d;
+  width: 134px;
+  height: 194px;
+  line-height: 194px;
+  text-align: center;
+}
+.avatar {
+  width: 134px;
+  height: 194px;
+  display: block;
+}
+
+// 证件照
+.card-uploader {
+  .el-upload {
+    width: 400px;
+    height: 200px;
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-uploader-icon {
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    font-size: 30px;
+    color: #8c939d;
+    text-align: center;
+  }
+  .el-upload__tip {
+    line-height: 1.5;
+    margin-top: 0;
+  }
+  .image {
+    width: 400px;
+    height: 200px;
+    display: block;
+  }
+}

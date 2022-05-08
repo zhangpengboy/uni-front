@@ -1,0 +1,160 @@
+/* 通用块局布局  */
+.main-wrap {
+  background: #ffffff;
+  margin-left: 24upx;
+  margin-right: 24upx;
+  border-radius: 16upx;
+  overflow: hidden;
+  &:not(:last-child) {
+    margin-bottom: 24upx;
+  }
+  &-box {
+    padding: 28upx;
+  }
+}
+/* 通用按钮 */
+.cbtn {
+  font-size: 28upx;
+  line-height: 32upx;
+  padding: 8upx 24upx;
+  margin-left: 24upx;
+  border-radius: 50upx;
+  color: $uni-text-color-muted;
+  border: 1px solid $uni-border-color;
+
+  &.main {
+    color: $uni-color-main;
+    border: 1px solid $uni-color-main;
+  }
+}
+
+ /* 分享弹窗 */
+.share-pro {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	flex-direction: column;
+	z-index: 99;
+	line-height: 1;
+	box-sizing: border-box;
+
+	&-mask {
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba(0, 0, 0, 0.5);
+	}
+
+	&-dialog {
+		width: 750upx;
+		height: 310upx;
+		overflow: hidden;
+		background-color: #fff;
+		border-radius: 24rpx 24rpx 0px 0px;
+		position: relative;
+		box-sizing: border-box;
+		position: fixed;
+		bottom: 0;
+		z-index: 10000;
+
+		.close-btn {
+			padding: 20rpx 15rpx;
+			position: absolute;
+			top: 0rpx;
+			right: 29rpx;
+		}
+
+		.share-pro-title {
+			font-size: 28rpx;
+			color: #1c1c1c;
+			padding: 28rpx 41rpx;
+			background-color: #f7f7f7;
+		}
+
+		.share-pro-body {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			font-size: 28rpx;
+			color: #1c1c1c;
+
+			.share-item {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				justify-content: space-around;
+
+				button {
+					background: none;
+					line-height: 1.5;
+
+					&::after {
+						border: none;
+					}
+				}
+
+				.share-icon {
+					text-align: center;
+					font-size: 70rpx;
+					margin-top: 39rpx;
+					margin-bottom: 16rpx;
+					color: #42ae3c;
+				}
+
+				&:nth-child(2) {
+					.share-icon {
+						color: #ff5f33;
+					}
+				}
+			}
+		}
+	}
+
+	/* 显示或关闭内容时动画 */
+	.open {
+		transition: all 0.3s ease-out;
+		transform: translateY(0);
+	}
+
+	.close {
+		transition: all 0.3s ease-out;
+		transform: translateY(310rpx);
+	}
+}
+
+ /* 海报样式 */
+.canvas {
+	position: fixed !important;
+	top: 0 !important;
+	left: 0 !important;
+	display: block !important;
+	width: 100% !important;
+	height: 100% !important;
+	z-index: 1000;
+}
+
+.pr {
+	position: relative;
+}
+
+.abs-tr {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.line-thr {
+	text-decoration: line-through;
+}
+	
+.text-main {
+	color: $uni-color-main;
+}
+.bg-main {
+	background: $uni-color-main;
+	color: $font-color-white;
+}

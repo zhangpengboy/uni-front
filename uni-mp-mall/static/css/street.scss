@@ -1,0 +1,143 @@
+	// 街市商品信息
+	.storeInfo {
+		// width: 100%;
+		// height: 100%;
+		background: #ffffff;
+		border-radius: 16upx;
+		padding: 24upx;
+		margin-bottom: 24upx;
+
+		.dian {
+			width: 12upx;
+			height: 12upx;
+			background: #d5d5d5;
+			margin-right: 16upx;
+			border-radius: 50%;
+		}
+
+		.top {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.left {
+				display: flex;
+				align-items: center;
+
+				.img {
+					width: 64upx;
+					height: 64upx;
+					border-radius: 50%;
+					margin-right: 20upx;
+				}
+
+				.storeName {
+					max-width: 240upx;
+					color: #333333;
+					font-size: 30upx;
+					// vertical-align: top;
+					font-weight: 700;
+					display: inline-block;
+					overflow: hidden; //超出的文本隐藏
+					text-overflow: ellipsis; //溢出用省略号显示
+					white-space: nowrap; //溢出不换行
+				}
+				
+				.distance {
+					margin-left: 20upx;
+					font-size: 26upx;
+					color: #666;
+				}
+			}
+			.right {
+				image {
+					width: 28upx;
+					height: 28upx;
+				}
+			}
+		}
+
+		.bottom {
+			display: flex;
+			align-items: center;
+			margin-top: 28upx;
+
+			.img {
+				width: 28upx;
+				height: 28upx;
+				margin-right: 6upx;
+			}
+
+			.address {
+				width: 522upx;
+				// height: 20px;
+				font-size: 28upx;
+				font-weight: 300;
+				// line-height: 20px;
+				color: #666666;
+				// display: -webkit-box;
+				// overflow: hidden;
+				// text-overflow: ellipsis;
+				// -webkit-line-clamp: 2;
+				// -webkit-box-orient: vertical;
+			}
+		}
+
+		// 套餐
+		.package-title {
+			width: 128upx;
+			height: 44upx;
+			font-size: 32upx;
+			font-weight: 300;
+			line-height: 44upx;
+			color: #333333;
+			text-align: left;
+		}
+
+		.package-name {
+			height: 42upx;
+			font-size: 30upx;
+			font-weight: 700;
+			line-height: 42upx;
+			text-align: left;
+			color: #333333;
+			margin: 28upx 0;
+		}
+
+		.package-details {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.left {
+				display: flex;
+				align-items: center;
+
+				.num {
+					width: 514upx;
+					// height: 20px;
+					font-size: 28upx;
+					font-weight: 300;
+					// line-height: 20px;
+					color: #999999;
+				}
+
+				.p {
+					width: 600upx;
+					// height: 20px;
+					font-size: 28upx;
+					font-weight: 300;
+					// line-height: 20px;
+					color: #999999;
+				}
+			}
+
+			.price {
+				height: 40upx;
+				font-size: 28upx;
+				font-weight: 300;
+				line-height: 40upx;
+				color: #666666;
+			}
+		}
+	}

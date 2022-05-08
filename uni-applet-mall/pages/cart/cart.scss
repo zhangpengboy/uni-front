@@ -1,0 +1,349 @@
+/* 购物车列表 */
+.cart-list{
+  width: 100%;
+  padding-top: 24rpx;
+	padding-bottom: 120rpx;
+  /* #ifdef APP-PLUS */
+  margin-top: calc(100rpx + var(--status-bar-height));
+  /* #endif */
+	.store {
+		padding-bottom: 0 !important;
+		.storeName {
+			font-size: 30upx;
+			color: #333;
+			font-weight: 700;
+			margin: 0 8upx 0 0;
+		}
+		image{
+			width: 16upx;
+			height: 16upx;
+		}
+	}
+  .list{
+    display: flex;
+		padding-top: 24rpx;
+		padding-bottom: 24rpx;
+		align-items: center;
+		.height {
+			height: 180rpx;
+		}
+    .check{
+      display: flex;
+      align-items: center;
+			margin-right: 10upx;
+      text{
+        font-size: 36rpx;
+        color: #333333;
+      }
+      .icon-checked{
+        color: $uni-color-main;
+      }
+    }
+    .goods{
+      display: flex;
+      align-items: center;
+      .thumb{
+        display: flex;
+        justify-content: center;
+        width: 180rpx;
+        height: 180rpx;
+        image{
+          width: 180rpx;
+          height: 180rpx;
+          border-radius: 10rpx;
+        }
+      }
+      .item{
+        padding: 10rpx;
+				flex: 1;
+        height: 100%;
+        .title{
+          display: flex;
+          align-items: center;
+          width: 100%;
+          overflow: hidden;
+          text{
+						width: 400upx;
+						display: -webkit-box;
+						-webkit-box-orient: vertical;
+						-webkit-line-clamp: 2;
+						text-align: justify;
+            font-size: 26rpx;
+            color: #212121;
+          }
+        }
+        .attribute{
+          display: flex;
+          align-items: center;
+          margin-top: 10rpx;
+          .attr{
+            display: flex;
+            align-items: center;
+            padding: 4rpx 20rpx;
+            background-color: #f6f6f6;
+            border-radius: 10rpx;
+            text{
+              font-size: 22rpx;
+              color: #333333;
+            }
+            .more{
+              display: flex;
+              width: 10rpx;
+              height: 10rpx;
+              border-left: 2rpx solid #333333;
+              border-bottom: 2rpx solid #333333;
+              transform: rotate(-45deg);
+              margin-left: 10rpx;
+            }
+          }
+        }
+        .price-num{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+					padding: 16rpx 0;
+
+					.text-price {
+						font-size: 26upx;
+						margin-bottom: 4upx;
+					}
+					
+					.vipPrice {
+						height: 36upx;
+						display: flex;
+						align-items: center;
+						font-size: 26upx;
+						background: $base;
+						opacity: 1;
+						color: #fff;
+						line-height: 36upx;
+						text-align: center;
+						border-radius: 8upx;
+						padding: 4upx;
+						.vipPrice-title {
+							font-size: 20upx;
+						}
+					}
+					
+					.x-btn {
+						height: 32upx;
+						font-size: 22upx;
+						color: #333;
+						background: #FFFFFF;
+						border: 2upx solid #EEEEEE;
+						line-height: 32upx;
+						padding: 6upx 8upx;
+						border-radius: 8upx;
+					}
+					
+          .num{
+            display: flex;
+            height: 40rpx;
+            .add{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 40rpx;
+              height: 40rpx;
+              background-color: #FFFFFF;
+              text{
+                color: #212121;
+                font-size: 24rpx;
+              }
+            }
+            .number{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 80rpx;
+              height: 40rpx;
+              background-color: #f6f6f6;
+              border-radius: 8rpx;
+              text{
+                font-size: 24rpx;
+                color: #212121;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 结算 */
+.close-account{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+	z-index: 2000;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100rpx;
+  background-color: #FFFFFF;
+  border-top: 2rpx solid #f6f6f6;
+  .check-total{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+    .check{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30%;
+      height: 100%;
+      text{
+        font-size: 36rpx;
+        color: #333333;
+      }
+      .icon-checked{
+        color: $uni-color-main;
+      }
+      .all{
+        font-size: 24rpx;
+        margin-left: 10rpx;
+      }
+    }
+    .total{
+      display: flex;
+      align-items: center;
+      // width: 60%;
+      height: 100%;
+      // text{
+      //   font-size: 24rpx;
+      //   color: #333333;
+      // }
+      .price{
+        font-weight: bold;
+        color: $uni-color-main;
+      }
+    }
+		.preferential {
+			display: flex;
+			align-items: center;
+			font-size: 20upx;
+			.mr-4 {
+				margin-right: 8upx;
+			}
+			image {
+				width: 16upx;
+				height: 16upx;
+				margin-left: 4upx;
+			}
+		}
+  }
+  .account{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 46%;
+    padding-right: 4%;
+    .btn-calculate{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 160rpx;
+      height: 55rpx;
+      background-color: $uni-color-main;
+      border-radius: 60rpx;
+      text{
+        color: #FFFFFF;
+        font-size: 24rpx;
+      }
+    }
+		.move-favorites {
+			width: 160upx;
+			height: 56upx;
+			font-size: 28upx;
+			color: #FA3B1C;
+			border: 1px solid #FA3B1C;
+			opacity: 1;
+			border-radius: 160upx;
+			line-height: 56upx;
+			text-align: center;
+			margin-right: 24upx;
+		}
+		
+    .btn-del{
+      width: 160upx;
+      height: 56upx;
+      font-size: 28upx;
+      color: #666;
+      border: 1px solid #C1C1C1;
+      opacity: 1;
+      border-radius: 160upx;
+      line-height: 56upx;
+      text-align: center;
+    }
+  }
+}
+
+.not-login {
+	padding-top: 180upx;
+}
+
+.top{
+	top: -100rpx;
+}
+.round-modal {
+	border-radius: 16upx 16upx 0 0 !important;
+}
+// 优惠模态框
+.modal-title {
+	font-size: 32upx;
+	color: #666;
+	margin: 0 auto;
+	font-weight: 700;
+}
+
+.modal-cell {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 28upx;
+	margin: 32upx 40upx;
+	color: #333;
+	.price {
+		display: flex;
+		align-items: center;
+	}
+	.fw-700 {
+		font-weight: 700;
+	}
+	.text-r {
+		text-align: right;
+	}
+	.price-preferential {
+		display: flex;
+		align-items: center;
+		font-size: 22upx;
+		color: $uni-color-main;
+	}
+}
+
+// 管理购物车
+.editCart {
+	height: 80upx;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 26upx;
+	background: #fff;
+	padding-left: 24upx;
+	
+	.editor {
+		width: 200upx;
+		height: 50upx;
+		font-size: 26upx;
+		color: #333;
+		line-height: 50upx;
+		text-align: center;
+		padding: 0 24upx;
+	}
+}
+
+.price-clor {
+	color: $price-clor;
+}

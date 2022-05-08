@@ -1,0 +1,236 @@
+html,
+body {
+    height: auto;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    list-style: none;
+}
+
+.content-box {
+    max-width: 750px;
+    height: 31rem;
+}
+
+.operator-bg {
+    background: url('../images/operator-bg.jpg') no-repeat top center/100%;
+}
+
+
+.partner-bg {
+    background: url('../images/partner-bg.jpg') no-repeat top center/100%;
+}
+
+
+.input-box {
+
+    padding: 17.1rem 0.35rem 0 0.35rem;
+}
+
+.input-box ul {
+    margin: 15px 15px;
+}
+
+.input-box ul li {
+    border-bottom: 1px solid rgba(247, 247, 247, 1);
+    padding: 0.16rem 0.1rem;
+    line-height: 0.4rem;
+    display: flex;
+}
+
+.input-box ul li:last-of-type {
+    border-bottom: none;
+    flex-direction: column
+}
+
+.input-name {
+    font-size: 0.3rem;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    color: rgba(221, 182, 123, 1);
+
+}
+
+.radio {
+    -webkit-appearance: radio !important;
+    margin-left: 0.3rem;
+
+}
+
+.input-text {
+    margin-left: 1.26rem;
+    margin-right: 0.1rem;
+
+}
+
+.input-move {
+    margin-left: 0.22rem;
+}
+
+.input {
+    border: none;
+    text-align: left;
+    width: auto;
+    margin-left: 0.2rem;
+    line-height: 0.35rem;
+}
+
+.button {
+    width: 80%;
+    border: none;
+    line-height: 0.8rem;
+    background: linear-gradient(95deg, rgba(255, 103, 61, 1) 0%, rgba(255, 169, 48, 1) 100%);
+    box-shadow: 0px 8px 16px 0px rgba(235, 96, 0, 0.47);
+    border-radius: 0.4rem;
+    margin-left: 10%;
+    margin-top: -0.15rem;
+}
+
+.button span {
+    width: 1.46rem;
+    height: 0.34rem;
+    font-size: 0.36rem;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    line-height: 0.34rem;
+
+}
+
+h3 {
+    height: 0.35rem;
+    font-size: 0.36rem;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: rgba(51, 51, 51, 1);
+    line-height: 0.36rem;
+    margin-left: 0.35rem;
+    margin-top: 0.5rem;
+}
+
+.textaea {
+    overflow: hidden;
+    background-color: #f8f8f8;
+    flex: 1;
+    border: 1px solid #F8F8F8;
+    padding: 3px 4px;
+    margin-top: 0.1rem;
+    font-size: 0.3rem;
+}
+
+.textaea::-webkit-input-placeholder {
+    color: #999;
+    font-size: 0.27rem;
+
+}
+
+.input::-webkit-input-placeholder {
+    color: #999;
+    font-size: 0.28rem;
+
+}
+
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.textaea:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.area-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(51, 51, 51, 1);
+    font-size: 0.25rem;
+    padding-bottom: 10px;
+    position: relative;
+    top: -0.20rem;
+}
+
+.alertHtml {
+    position: fixed;
+    left: 25%;
+    top: 40%;
+    line-height: 2rem;
+    text-align: center;
+    padding: 0.1rem 0.1rem;
+    width: 50%;
+    background: white;
+    display: none;
+    font-size: 0.32rem;
+    z-index: 999;
+    font-family: PingFang SC;
+    border-radius: 0.2rem;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+
+}
+
+.box-mark {
+    background: #a6a5a5;
+    opacity: 0.2;
+    min-width: 750px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+
+.radio-text {
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    font-size: 0.28rem;
+}
+
+.footer-box {
+    background: white;
+    width: 100%;
+    position: fixed;
+    bottom: 0rem;
+    text-align: center;
+    height: 1.2rem;
+}
+
+.type-box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 7rem;
+    margin: 0.2rem auto;
+}
+
+.type-box li {
+    line-height: 0.8rem;
+    width: 3.5rem;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid rgba(247, 24, 133, 1);
+    font-weight: bold;
+    color: rgba(247, 24, 133, 1);
+    font-size: 0.32rem;
+}
+
+.type-box .first-item {
+    border-radius: 0.55rem 0 0 0.55rem;
+}
+
+.type-box .two-item {
+    border-radius: 0 0.55rem 0.55rem 0;
+
+}
+
+.first-active {
+    color: white !important;
+    background: url('../images/first-item.png') no-repeat center center/100%;
+}
+
+.two-active {
+    color: white !important;
+    background: url('../images/two-item.png') no-repeat center center/100%;
+}
